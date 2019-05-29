@@ -12,7 +12,8 @@ class TodoList extends React.Component {
             todoList: [
                 {
                     task: "Mow the lawn", 
-                    id: new Date(), 
+                    id: 1528817077286, 
+                    date: new Date(),
                     completed: false
                 }
             ]
@@ -30,7 +31,8 @@ class TodoList extends React.Component {
         if (this.state.input) {
             const newTodo = {
                 task: this.state.input,
-                id: new Date(),
+                id: Date.now(),
+                date: new Date(),
                 completed: false
             }
             this.setState ({
@@ -46,7 +48,7 @@ class TodoList extends React.Component {
             <div>
                 <ul>
                     {this.state.todoList.map(todoEachObj => (
-                        <Todo todoItemObj={todoEachObj} />
+                        <Todo todoItemObj={todoEachObj} key={todoEachObj.id}/>
                     ))}
                 </ul>
                 <TodoForm 
