@@ -8,7 +8,7 @@ const Todo = (props) => {
     const date = props.todoItemObj.date.toLocaleDateString("en-US", options)
 
     return (
-        <li className="todoItem">{props.todoItemObj.task} - {date}</li>
+        <li className="todoItem" onClick={props.onClick}>{props.todoItemObj.task} - {date}</li>
     );
 }
 

@@ -3,6 +3,7 @@
 import React from 'react';
 import Todo from './Todo';
 import TodoForm from './TodoForm';
+import './Todo.css';
 
 class TodoList extends React.Component {
     constructor() {
@@ -42,13 +43,37 @@ class TodoList extends React.Component {
         }
     }
 
+    toggleComplete = (e) => {
+        const clickedObj = this.state.todoList.filter(obj => obj.id === e.target.key);
+        console.log(clickedObj);
+        if (clickedObj.completed === false) {
+            clickedObj.completed = true;
+            e.target.classList.add("complete");
+        } else {
+            clickedObj.completed = false;
+            e.target.classList.remove("complete");
+        }
+    }
+
+    clear = (e) => {
+        e.preventDefault();
+        this.setState ({
+            todoList: []
+        })
+    }
+
+
 
     render() {
         return(
-            <div>
+            <div className="container">
                 <ul>
                     {this.state.todoList.map(todoEachObj => (
-                        <Todo todoItemObj={todoEachObj} key={todoEachObj.id}/>
+                        <Todo 
+                            todoItemObj={todoEachObj} 
+                            key={todoEachObj.id}
+                            onClick={this.toggleComplete}
+                        />
                     ))}
                 </ul>
                 <TodoForm 

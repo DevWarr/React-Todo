@@ -1,0 +1,60 @@
+.container {
+    width: 500px;
+    margin: 30px auto 0px;
+}
+
+ul {
+    list-style: none;
+    height: 200px;
+    overflow: auto;
+    display: block;
+    margin: 0 auto 50px;
+    padding: 20px 0 50px;
+    border: 1px solid black;
+    box-shadow: 2px 2px 0 gray;
+    background: #7825bb;
+}
+
+li {
+    cursor: pointer;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 6px 0 6px 10%; 
+    color: white;
+    background: #391957;
+}
+
+.complete {
+    text-decoration: line-through;
+    background: #195728;
+}
+
+form {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-flow: column wrap;
+    align-content: space-around;
+    justify-content: space-between;
+}
+
+input {
+    height: 100%;
+    width: 48%;
+}
+
+button {
+    width: 20%;
+
+}
+
+::-webkit-scrollbar {width: 16px;}
+::-webkit-scrollbar-track {
+background: transparent;
+}
+::-webkit-scrollbar-thumb {
+background: rgba(0, 0, 0, 0.5);
+}
+::-webkit-scrollbar-thumb:hover {
+background: #000000;
+}
