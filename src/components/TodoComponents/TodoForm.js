@@ -9,6 +9,8 @@ const TodoForm = (props) => {
                 type="text" 
                 placeholder="Enter in new task" 
                 onChange={props.inputChange}
+                value={props.value}
+                name={props.name}
             />
 
             <button className="addTodo" onClick={props.addTodo}>Add Todo</button>
@@ -18,3 +20,5 @@ const TodoForm = (props) => {
 };
 
 export default TodoForm;
+
+

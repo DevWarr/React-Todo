@@ -9,19 +9,32 @@ class TodoList extends React.Component {
         super();
         this.state = {
             input: "",
-            todoList: []
+            todoList: [
+                // {
+                //     task: "Mow the lawn", 
+                //     id: new Date(), 
+                //     completed: false
+                // }
+            ]
         }
     }
 
-    handleChanges(e) {
+    handleChanges = (e) => {
         this.setState ({
-            input: e.target.value
+            [e.target.name]: e.target.value
         });
     }
 
-    addTodo() {
+    addTodo = (e) => {
+        e.preventDefault();
+        const newTodo = {
+            task: this.state.input,
+            id: new Date(),
+            completed: false
+        }
         this.setState ({
-            
+            input: "",
+            todoList: [...this.state.todoList, newTodo]
         });
     }
 
@@ -29,10 +42,19 @@ class TodoList extends React.Component {
     render() {
         return(
             <div>
-                {this.state.todoList.map(todoEachObj => {
-                    <Todo todoItemObj={todoEachObj} />
-                })}
-                <TodoForm inputChange={this.handleChanges} addTodo={this.addTodo} clear={this.clear} />
+                <ul>
+                    {this.state.todoList.map(todoEachObj => (
+                        <Todo todoItemObj={todoEachObj} />
+                    ))}
+                </ul>
+                <TodoForm 
+                    inputChange={this.handleChanges} 
+                    addTodo={this.addTodo} 
+                    clear={this.clear} 
+                    value={this.state.input} 
+                    name="input"
+                />
+
             </div>
         );
     }
