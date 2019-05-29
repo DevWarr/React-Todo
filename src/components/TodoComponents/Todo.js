@@ -4,10 +4,11 @@ import React from 'react'
 
 const Todo = (props) => {
 
-    const options = {weekday: "long", month: "long", year: "numeric"}
+    const options = {weekday: "short", month: "long", year: "numeric"}
+    const date = props.todoItemObj.id.toLocaleDateString("en-US", options)
 
     return (
-        <li className="todoItem">{props.todoItemObj.task}, {props.id.toloacaleString}(</li>
+        <li className="todoItem">{props.todoItemObj.task} - {date}</li>
     );
 }
 

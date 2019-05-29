@@ -10,11 +10,11 @@ class TodoList extends React.Component {
         this.state = {
             input: "",
             todoList: [
-                // {
-                //     task: "Mow the lawn", 
-                //     id: new Date(), 
-                //     completed: false
-                // }
+                {
+                    task: "Mow the lawn", 
+                    id: new Date(), 
+                    completed: false
+                }
             ]
         }
     }
@@ -27,15 +27,17 @@ class TodoList extends React.Component {
 
     addTodo = (e) => {
         e.preventDefault();
-        const newTodo = {
-            task: this.state.input,
-            id: new Date(),
-            completed: false
+        if (this.state.input) {
+            const newTodo = {
+                task: this.state.input,
+                id: new Date(),
+                completed: false
+            }
+            this.setState ({
+                input: "",
+                todoList: [...this.state.todoList, newTodo]
+            });
         }
-        this.setState ({
-            input: "",
-            todoList: [...this.state.todoList, newTodo]
-        });
     }
 
 
