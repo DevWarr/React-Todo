@@ -24,6 +24,10 @@ li {
     background: #391957;
 }
 
+li:hover {
+    background: #523270;
+}
+
 .complete {
     text-decoration: line-through;
     background: #195728;

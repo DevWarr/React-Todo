@@ -44,15 +44,7 @@ class TodoList extends React.Component {
     }
 
     toggleComplete = (e) => {
-        const clickedObj = this.state.todoList.filter(obj => obj.id === e.target.key);
-        console.log(clickedObj);
-        if (clickedObj.completed === false) {
-            clickedObj.completed = true;
-            e.target.classList.add("complete");
-        } else {
-            clickedObj.completed = false;
-            e.target.classList.remove("complete");
-        }
+        console.log(e.target.onClick);
     }
 
     clear = (e) => {
