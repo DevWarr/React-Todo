@@ -12,6 +12,11 @@ const TodoForm = (props) => {
                 value={props.value}
                 name={props.name}
             />
+            <input 
+                type="text"
+                placeholder="Search for To-do item"
+                onChange={props.onSearch}
+            />
 
             <button className="addTodo" onClick={props.addTodo}>Add Todo</button>
             <button className="clear" onClick={props.clearAll}>Clear All</button>
