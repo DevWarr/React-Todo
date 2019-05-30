@@ -44,10 +44,25 @@ class TodoList extends React.Component {
     }
 
     toggleComplete = (e) => {
-        console.log(e.target.onClick);
+        console.log(e.target.id);
+        const index = e.target.id;
+        const todos = this.state.todoList;
+        todos[index].completed = todos[index].completed === false ? true : false;
+        this.setState({
+            todoList: todos
+        })
     }
 
-    clear = (e) => {
+
+    clearCompleted = (e) => {
+        e.preventDefault();
+        const todos = this.state.todoList.filter(obj => !obj.completed);
+        this.setState({
+            todoList: todos
+        })
+    }
+
+    clearAll = (e) => {
         e.preventDefault();
         this.setState ({
             todoList: []
@@ -60,10 +75,11 @@ class TodoList extends React.Component {
         return(
             <div className="container">
                 <ul>
-                    {this.state.todoList.map(todoEachObj => (
+                    {this.state.todoList.map((todoEachObj, i) => (
                         <Todo 
                             todoItemObj={todoEachObj} 
                             key={todoEachObj.id}
+                            id={i}
                             onClick={this.toggleComplete}
                         />
                     ))}
@@ -71,7 +87,8 @@ class TodoList extends React.Component {
                 <TodoForm 
                     inputChange={this.handleChanges} 
                     addTodo={this.addTodo} 
-                    clear={this.clear} 
+                    clearAll={this.clearAll} 
+                    clear={this.clearCompleted}
                     value={this.state.input} 
                     name="input"
                 />
