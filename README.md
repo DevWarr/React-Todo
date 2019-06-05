@@ -37,7 +37,7 @@
 - The `completed` field should default to `false` and will be the field that we toggle when we complete a todo.
 - The `id` field is a unique `Time Stamp` that will be assigned by `Date.now()`.
 
-#### Day 1 Challenges
+#### Day 1 Challenges (COMPLETE)
 
 - **Don't focus on styling yet**. We want you to worry about function over form today.
 - Your todo list should display a list of todos, an input field, a submit button, and a clear all button.
@@ -51,7 +51,7 @@
   - Your input field should take in user input, and allow a user to press `Enter` or click on the `Submit Button` to add a todo to your list.
   - Once a todo is submitted, the Todo List should re-render and show the added todo.
 
-#### Day 2 Challenges
+#### Day 2 Challenges (COMPLTETE)
 
 - Add the functionality to toggle your todo's completed flag from `false` to `true`.
   - Once a todo is completed, be sure to demonstrate to the user that the todo is completed by adding a line-through style property if the completed flag is true.
@@ -60,7 +60,7 @@
 
 #### Stretch Problems
 
-- **Persist your data** in `window.localStorage()` hint: you may have to pass your data to a stringifier to get it to live inside the `localStorage()` of the browser. This will cause it to persist past the page refresh.
+- [x] **Persist your data** in `window.localStorage()` hint: you may have to pass your data to a stringifier to get it to live inside the `localStorage()` of the browser. This will cause it to persist past the page refresh.
 
 - **Search Functionality** Add a input bar that allows you to search through your tasks and only show the ones that match the search input.
 
